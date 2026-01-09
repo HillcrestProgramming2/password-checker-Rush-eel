@@ -19,7 +19,9 @@ public class PasswordCheckerApp {
         System.out.print("Enter a password: ");
         String password = in.nextLine();
         int count = CriteriaChecker.evaluateCriteria(password);
+        System.out.println("Password Strength:");
         System.out.println(CriteriaChecker.determineStrength(count));
+        System.out.println("Suggestions to improve your password:");
         System.out.println(FeedbackGenerator.generateFeedback(password));
 
     }
