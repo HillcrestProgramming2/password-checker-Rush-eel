@@ -8,10 +8,10 @@ package org.hillcrest.chapter6.password;
  * many criteria are met and provides a strength rating based on that count.
  */
 public class CriteriaChecker {
-    private static String lowerletters = "abcdefghijklmnopqrstuvwxyz";
-    private static String upperletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    private static String numbers = "0123456789";
-    private static String specials = "!@#$%^&*()-+=";
+    private static final String LOWER_LETTERS = "abcdefghijklmnopqrstuvwxyz";
+    private static final String UPPER_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final String NUMBERS = "0123456789";
+    private static final String SPECIALS = "!@#$%^&*()-+=";
     private static boolean isLongEnough = false;
     private static boolean hasLowerLetter = false;
     private static boolean hasUpperLetter = false;
@@ -32,9 +32,9 @@ public class CriteriaChecker {
         for (int i = 0; i < password.length(); i++) {
             char ch = password.charAt(i);
             if (Character.isLowerCase(ch)) hasLowerLetter = true;
-            else if (upperletters.indexOf(ch) >= 0) hasUpperLetter = true;
-            else if (numbers.indexOf(ch) >= 0) hasNumber = true;
-            else if (specials.indexOf(ch) >= 0) hasSpecial = true;
+            else if (UPPER_LETTERS.indexOf(ch) >= 0) hasUpperLetter = true;
+            else if (NUMBERS.indexOf(ch) >= 0) hasNumber = true;
+            else if (SPECIALS.indexOf(ch) >= 0) hasSpecial = true;
         }
 
         // Count criteria met
